@@ -919,7 +919,7 @@
     // ============================================================
     const app = {
       currentTab: 'backlog',
-      sortCriteria: 'roi', // Criterio de ordenamiento por defecto
+      sortCriteria: 'epic', // Criterio de ordenamiento por defecto
       sortDirection: 'desc', // 'asc' o 'desc'
       latestCreatedDate: null, // Fecha del item más reciente
       newItemThreshold: null, // Fecha límite para considerar un item como "nuevo"
@@ -1640,7 +1640,7 @@
         localStorage.setItem('project-report-sort-criteria', this.sortCriteria);
         localStorage.setItem('project-report-sort-direction', this.sortDirection);
         
-        this.renderBacklog(); // Re-renderizar
+        this.renderContent(); // Re-renderizar la vista actual
       },
       
       // Render backlog grouped by epic

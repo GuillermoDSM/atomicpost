@@ -109,7 +109,7 @@ const projectYAML = `
 
 metadata:
   name: AtomicPost
-  fullName: AtomicPost Treasury Settlement Workspace
+  fullName: Treasury Settlement Workspace
   description: Prototipo funcional en Next.js para una plataforma operativa de settlement postal con USD-ST sobre XRPL. El proyecto ya tiene PRD, sitemap UX, shell compartido, dashboard, lista de ciclos y detalle inicial; la siguiente fase convierte ese prototipo en un MVP operativo alineado con el PRD.
   version: 0.2.0
   startDate: 2026-03-04
