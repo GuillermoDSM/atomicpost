@@ -317,9 +317,28 @@ backlog:
       created: 2026-03-09
       completed: null
       technical_note: true
-      technical_notes: El archivo src/lib/settlement-cycles.ts es un inicio, pero no cubre Closed, authorization states, redemption ni persistencia.
+      technical_notes: El archivo src/lib/settlement-cycles.ts es un inicio, pero no cubre Closed, authorization states ni redemption.
       dependencies: [US-001]
-      notes: Enabler tecnico para los siguientes sprints.
+      notes: Enabler tecnico centrado en dominio y maquina de estados.
+    - id: US-016
+      type: user_story
+      epic: EPIC-005
+      title: Preparar base de datos y capa de persistencia inicial
+      description: Como equipo tecnico, queremos una base de datos y una capa de acceso a datos para soportar el MVP con informacion real y trazable.
+      acceptance_criteria:
+        - Esquema inicial para entidades core del settlement.
+        - Estrategia de persistencia y repositorios definida e implementada.
+        - Seed o dataset inicial disponible para desarrollo y demo.
+      business_value: 5
+      story_points: 8
+      billing: incluido
+      sprint: 2
+      created: 2026-03-10
+      completed: null
+      technical_note: true
+      technical_notes: Enabler explicito para base de datos, persistencia, seeds y acceso a datos del MVP.
+      dependencies: [US-008]
+      notes: Enabler critico; sin esta historia no hay salto real de prototipo a producto funcional.
     - id: US-009
       type: user_story
       epic: EPIC-005
@@ -337,7 +356,7 @@ backlog:
       completed: null
       technical_note: false
       technical_notes: Debe incluir capa de persistencia y validaciones de BR-01 a BR-05.
-      dependencies: [US-008]
+      dependencies: [US-008, US-016]
       notes: Primer incremento funcional real del flujo.
     - id: US-010
       type: user_story
@@ -356,7 +375,7 @@ backlog:
       completed: null
       technical_note: false
       technical_notes: Debe cubrir FR-06 a FR-13 y BR-06 a BR-10.
-      dependencies: [US-008, US-009]
+      dependencies: [US-008, US-016, US-009]
       notes: Necesario para todos los casos Payable.
     - id: US-011
       type: user_story
@@ -432,7 +451,7 @@ backlog:
       completed: null
       technical_note: false
       technical_notes: Debe cubrir FR-32 a FR-34 y BR-20.
-      dependencies: [US-012]
+      dependencies: [US-012, US-016]
       notes: Entregable clave para stakeholders no operativos.
     - id: US-015
       type: user_story
@@ -451,7 +470,7 @@ backlog:
       completed: null
       technical_note: true
       technical_notes: Cubre varios NFR del PRD y reduce riesgo de demo.
-      dependencies: [US-009, US-010, US-011, US-012]
+      dependencies: [US-009, US-010, US-011, US-012, US-016]
       notes: Debe cerrar deuda tecnica del prototipo inicial.
 
     - id: TASK-001
@@ -460,24 +479,24 @@ backlog:
       title: Redactar executive summary, goals y scope del producto
       description: Convertir la vision del producto en una base ejecutiva compartida.
       status: done
-      hours_est: 4
-      hours_actual: 4
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-002
       type: task
       parent: US-001
       title: Documentar requisitos funcionales y reglas de negocio
       description: Bajar a detalle FR, BR, NFR y estados principales.
       status: done
-      hours_est: 6
-      hours_actual: 6
+      hours_est: 2
+      hours_actual: 2
     - id: TASK-003
       type: task
       parent: US-001
       title: Consolidar user journey y acceptance criteria fuente
       description: Alinear el PRD con el journey operativo de referencia.
       status: done
-      hours_est: 3
-      hours_actual: 3
+      hours_est: 1
+      hours_actual: 1
 
     - id: TASK-004
       type: task
@@ -485,16 +504,16 @@ backlog:
       title: Disenar sitemap MVP y reglas de navegacion
       description: Definir arquitectura de informacion minima del producto.
       status: done
-      hours_est: 3
-      hours_actual: 3
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-005
       type: task
       parent: US-002
       title: Crear wireframes de Dashboard, Cycles y Cycle Detail
       description: Bosquejar la experiencia operativa base de las tres vistas centrales.
       status: done
-      hours_est: 5
-      hours_actual: 5
+      hours_est: 2
+      hours_actual: 2
 
     - id: TASK-006
       type: task
@@ -502,24 +521,24 @@ backlog:
       title: Configurar layout raiz y fuentes del producto
       description: Crear estructura base del App Router y branding tipografico.
       status: done
-      hours_est: 3
-      hours_actual: 3
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-007
       type: task
       parent: US-003
       title: Implementar app shell con sidebar y top bar
       description: Construir el contenedor compartido del workspace.
       status: done
-      hours_est: 6
-      hours_actual: 6
+      hours_est: 3
+      hours_actual: 3
     - id: TASK-008
       type: task
       parent: US-003
       title: Crear componentes UI reutilizables base
       description: Preparar badge, card, input y separator para las pantallas iniciales.
       status: done
-      hours_est: 4
-      hours_actual: 4
+      hours_est: 2
+      hours_actual: 2
 
     - id: TASK-009
       type: task
@@ -527,24 +546,24 @@ backlog:
       title: Maquetar KPI cards y bloque principal del dashboard
       description: Construir el resumen operativo principal del home.
       status: done
-      hours_est: 5
-      hours_actual: 5
+      hours_est: 2
+      hours_actual: 2
     - id: TASK-010
       type: task
       parent: US-004
       title: Crear priority queue y exception watch
       description: Destacar ciclos que requieren accion inmediata.
       status: done
-      hours_est: 4
-      hours_actual: 4
+      hours_est: 2
+      hours_actual: 2
     - id: TASK-011
       type: task
       parent: US-004
       title: Integrar reserve snapshot y actividad reciente mock
       description: Completar el command center inicial con datos de contexto.
       status: done
-      hours_est: 3
-      hours_actual: 3
+      hours_est: 1
+      hours_actual: 1
 
     - id: TASK-012
       type: task
@@ -552,24 +571,24 @@ backlog:
       title: Definir dataset mock tipado de settlement cycles
       description: Crear ciclos de ejemplo con estados, checks y next actions.
       status: done
-      hours_est: 5
-      hours_actual: 5
+      hours_est: 2
+      hours_actual: 2
     - id: TASK-013
       type: task
       parent: US-005
       title: Construir tabla de triage y row actions
       description: Implementar la pantalla lista de ciclos y acceso al detalle.
       status: done
-      hours_est: 5
-      hours_actual: 5
+      hours_est: 2
+      hours_actual: 2
     - id: TASK-014
       type: task
       parent: US-005
       title: Aplicar tonos visuales por status y direction
       description: Hacer legible el listado con indicadores visuales claros.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
 
     - id: TASK-015
       type: task
@@ -636,12 +655,26 @@ backlog:
       hours_actual: 3
     - id: TASK-023
       type: task
-      parent: US-008
-      title: Disenar esquema de persistencia y repositorios
-      description: Preparar la base para pasar de mocks a datos reales.
+      parent: US-016
+      title: Disenar esquema inicial de base de datos
+      description: Definir entidades core, relaciones y campos criticos del MVP.
       status: to_do
       hours_est: 8
     - id: TASK-024
+      type: task
+      parent: US-016
+      title: Implementar capa de persistencia y repositorios
+      description: Preparar lectura y escritura para settlement cycles y entidades relacionadas.
+      status: to_do
+      hours_est: 8
+    - id: TASK-025
+      type: task
+      parent: US-016
+      title: Crear seeds y dataset inicial de desarrollo
+      description: Permitir demos y desarrollo con datos consistentes y repetibles.
+      status: to_do
+      hours_est: 5
+    - id: TASK-026
       type: task
       parent: US-008
       title: Implementar reglas de transicion y validaciones basicas
@@ -649,21 +682,21 @@ backlog:
       status: to_do
       hours_est: 8
 
-    - id: TASK-025
+    - id: TASK-027
       type: task
       parent: US-009
       title: Disenar flujo de ingreso de clearing packages
       description: Modelar entrada manual o batch del handover aprobado.
       status: to_do
       hours_est: 6
-    - id: TASK-026
+    - id: TASK-028
       type: task
       parent: US-009
       title: Implementar validaciones de paquete y moneda soportada
       description: Aplicar BR-01 a BR-03 antes de crear ciclos.
       status: to_do
       hours_est: 6
-    - id: TASK-027
+    - id: TASK-029
       type: task
       parent: US-009
       title: Crear settlement cycle automatico con direction inicial
@@ -671,21 +704,21 @@ backlog:
       status: to_do
       hours_est: 8
 
-    - id: TASK-028
+    - id: TASK-030
       type: task
       parent: US-010
       title: Implementar reserve dashboard conectado a datos reales
       description: Mostrar backing, issued supply, capacidad y utilizacion.
       status: to_do
       hours_est: 8
-    - id: TASK-029
+    - id: TASK-031
       type: task
       parent: US-010
       title: Crear issuance authorization con estados y limites
       description: Habilitar autorizaciones activas y consumibles por ciclo.
       status: to_do
       hours_est: 8
-    - id: TASK-030
+    - id: TASK-032
       type: task
       parent: US-010
       title: Bloquear issuance por backing, authorization o trustline
@@ -693,21 +726,21 @@ backlog:
       status: to_do
       hours_est: 8
 
-    - id: TASK-031
+    - id: TASK-033
       type: task
       parent: US-011
       title: Crear payment instructions y confirmacion outbound
       description: Construir el flujo de pago payable con control explicito.
       status: to_do
       hours_est: 8
-    - id: TASK-032
+    - id: TASK-034
       type: task
       parent: US-011
       title: Implementar monitoreo inbound y estados de recepcion
       description: Soportar expected receipt, in transit, received y exception.
       status: to_do
       hours_est: 8
-    - id: TASK-033
+    - id: TASK-035
       type: task
       parent: US-011
       title: Soportar partial settlement y recalculo del remanente
@@ -715,21 +748,21 @@ backlog:
       status: to_do
       hours_est: 8
 
-    - id: TASK-034
+    - id: TASK-036
       type: task
       parent: US-012
       title: Implementar matching deterministico de transacciones
       description: Conciliar hash, amount, sender, receiver y memo.
       status: to_do
       hours_est: 8
-    - id: TASK-035
+    - id: TASK-037
       type: task
       parent: US-012
       title: Crear exception records y action log
       description: Registrar mismatches y decisiones manuales con trazabilidad.
       status: to_do
       hours_est: 6
-    - id: TASK-036
+    - id: TASK-038
       type: task
       parent: US-012
       title: Exponer reconciliation y exceptions en la UI operativa
@@ -737,21 +770,21 @@ backlog:
       status: to_do
       hours_est: 8
 
-    - id: TASK-037
+    - id: TASK-039
       type: task
       parent: US-013
       title: Registrar redemption y burn off-ledger
       description: Capturar el retorno de USD-ST y su impacto en supply.
       status: to_do
       hours_est: 6
-    - id: TASK-038
+    - id: TASK-040
       type: task
       parent: US-013
       title: Actualizar backing capacity despues del redemption
       description: Reflejar la liberacion de capacidad de emision.
       status: to_do
       hours_est: 5
-    - id: TASK-039
+    - id: TASK-041
       type: task
       parent: US-013
       title: Implementar checklist y bloqueo de cierre del ciclo
@@ -759,21 +792,21 @@ backlog:
       status: to_do
       hours_est: 6
 
-    - id: TASK-040
+    - id: TASK-042
       type: task
       parent: US-014
       title: Disenar dataset de reportes del PoC
       description: Definir indicadores, filtros y campos de export.
       status: to_do
       hours_est: 6
-    - id: TASK-041
+    - id: TASK-043
       type: task
       parent: US-014
       title: Implementar export por ClearingCycleID y portfolio
       description: Permitir salidas reutilizables para stakeholders.
       status: to_do
       hours_est: 8
-    - id: TASK-042
+    - id: TASK-044
       type: task
       parent: US-014
       title: Construir audit trail exportable y reproducible
@@ -781,21 +814,21 @@ backlog:
       status: to_do
       hours_est: 8
 
-    - id: TASK-043
+    - id: TASK-045
       type: task
       parent: US-015
       title: Implementar autenticacion basica del usuario treasury
       description: Restringir acciones criticas al actor autorizado.
       status: to_do
       hours_est: 8
-    - id: TASK-044
+    - id: TASK-046
       type: task
       parent: US-015
       title: Prevenir doble ejecucion y acciones de alto riesgo
       description: Anadir locks, confirmaciones y validaciones defensivas.
       status: to_do
       hours_est: 8
-    - id: TASK-045
+    - id: TASK-047
       type: task
       parent: US-015
       title: Crear smoke tests y pruebas sobre reglas criticas
@@ -832,6 +865,7 @@ sprints:
     goal: Alinear producto y UX, y dejar un prototipo navegable con shell, dashboard y lista de ciclos.
     retrospective:
       went_well:
+        - El cliente entrego gran parte de la base documental y de definicion ya resuelta.
         - PRD y documentacion de UX quedaron muy por delante del nivel de ambiguedad inicial.
         - Se construyo rapido una base visual consistente en Next.js.
         - El proyecto ya tiene una narrativa clara para demos tempranas.
@@ -843,7 +877,7 @@ sprints:
         - Convertir el PRD en backlog ejecutable y visible.
         - Priorizar arquitectura real del MVP antes de sumar nuevas pantallas.
         - Definir modelo de datos y estados canonicamente.
-    notes: Base documental y UX completada.
+    notes: Cliente aporto insumos clave ya listos.
   - number: 2
     status: in_progress
     goal: Convertir Cycle Detail en el cockpit del MVP y alinear la implementacion con la arquitectura UX definida.
