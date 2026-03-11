@@ -487,8 +487,8 @@ backlog:
       title: Documentar requisitos funcionales y reglas de negocio
       description: Bajar a detalle FR, BR, NFR y estados principales.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-003
       type: task
       parent: US-001
@@ -512,8 +512,8 @@ backlog:
       title: Crear wireframes de Dashboard, Cycles y Cycle Detail
       description: Bosquejar la experiencia operativa base de las tres vistas centrales.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
 
     - id: TASK-006
       type: task
@@ -529,16 +529,16 @@ backlog:
       title: Implementar app shell con sidebar y top bar
       description: Construir el contenedor compartido del workspace.
       status: done
-      hours_est: 3
-      hours_actual: 3
+      hours_est: 2
+      hours_actual: 2
     - id: TASK-008
       type: task
       parent: US-003
       title: Crear componentes UI reutilizables base
       description: Preparar badge, card, input y separator para las pantallas iniciales.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
 
     - id: TASK-009
       type: task
@@ -546,16 +546,16 @@ backlog:
       title: Maquetar KPI cards y bloque principal del dashboard
       description: Construir el resumen operativo principal del home.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-010
       type: task
       parent: US-004
       title: Crear priority queue y exception watch
       description: Destacar ciclos que requieren accion inmediata.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-011
       type: task
       parent: US-004
@@ -571,16 +571,16 @@ backlog:
       title: Definir dataset mock tipado de settlement cycles
       description: Crear ciclos de ejemplo con estados, checks y next actions.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 0.5
+      hours_actual: 0.5
     - id: TASK-013
       type: task
       parent: US-005
       title: Construir tabla de triage y row actions
       description: Implementar la pantalla lista de ciclos y acceso al detalle.
       status: done
-      hours_est: 2
-      hours_actual: 2
+      hours_est: 1
+      hours_actual: 1
     - id: TASK-014
       type: task
       parent: US-005
