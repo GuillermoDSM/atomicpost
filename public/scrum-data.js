@@ -222,9 +222,9 @@ backlog:
       created: 2026-03-05
       completed: 2026-03-07
       technical_note: false
-      technical_notes: Implementado en src/app/layout.tsx, src/app/globals.css, src/components/app-shell.tsx y componentes UI base.
+      technical_notes: Implementado en src/app/layout.tsx, src/app/globals.css, src/components/app-shell.tsx y componentes UI base. Decisiones validadas en prototipo: breadcrumb removido por redundante, perfil fijado al fondo del sidebar, contexto operativo reducido a indicadores discretos encima del perfil, y paleta centralizada en tokens globales desde globals.css.
       dependencies: [US-002]
-      notes: Shell funcional pero con breadcrumb y heading todavia estaticos.
+      notes: Shell mas limpio y contextual; siguiente paso es refinar responsive behavior y conectar busqueda real.
     - id: US-004
       type: user_story
       epic: EPIC-003
@@ -241,9 +241,9 @@ backlog:
       created: 2026-03-05
       completed: 2026-03-08
       technical_note: false
-      technical_notes: Dashboard navegable implementado con datos mock en src/app/(workspace)/page.tsx.
+      technical_notes: Dashboard navegable implementado con datos mock en src/app/(workspace)/page.tsx. Decisiones UX validadas: command center compacto, priority queue limitada a 3 ciclos maximos, KPI strip resumido, reserve snapshot y exceptions como modulos secundarios, y CTA hacia la lista completa de triage cuando se requiere mayor exploracion.
       dependencies: [US-003]
-      notes: Falta conectar datos reales, filtros funcionales y CTAs con workflows.
+      notes: Falta conectar datos reales y hacer que cada CTA continue el workflow verdadero del ciclo.
     - id: US-005
       type: user_story
       epic: EPIC-003
@@ -260,9 +260,9 @@ backlog:
       created: 2026-03-06
       completed: 2026-03-08
       technical_note: false
-      technical_notes: Implementado en src/app/(workspace)/settlement-cycles/page.tsx con dataset mock tipado.
+      technical_notes: Implementado en src/app/(workspace)/settlement-cycles/page.tsx con dataset mock tipado. Decision UX validada: esta pantalla es master list de triage y no debe duplicar el rol del dashboard; por eso se redujeron resumenes y se priorizo la lista filtrable.
       dependencies: [US-003]
-      notes: La UI existe pero busqueda, filtros y orden siguen siendo de presentacion.
+      notes: La UI existe pero busqueda, filtros y orden siguen siendo de presentacion; debe mantenerse list-first y no volver a crecer como dashboard secundario.
     - id: US-006
       type: user_story
       epic: EPIC-004
@@ -279,9 +279,9 @@ backlog:
       created: 2026-03-08
       completed: null
       technical_note: false
-      technical_notes: Implementacion inicial en src/app/(workspace)/settlement-cycles/[cycleId]/page.tsx.
+      technical_notes: Implementacion inicial en src/app/(workspace)/settlement-cycles/[cycleId]/page.tsx. Decision UX validada: el detalle debe priorizar next action, timeline y evidencia contextual antes que tabs fragmentadas o modulos separados.
       dependencies: [US-005]
-      notes: Hecho parcialmente. Aun faltan bloques operativos embebidos del MVP.
+      notes: Hecho parcialmente. Aun faltan bloques operativos embebidos del MVP, confirmaciones de acciones de riesgo y evidencia real en lugar de placeholders.
     - id: US-007
       type: user_story
       epic: EPIC-004
@@ -298,9 +298,9 @@ backlog:
       created: 2026-03-09
       completed: null
       technical_note: false
-      technical_notes: Hoy existen paginas scaffolded separadas que deben migrarse conceptualmente al detalle del ciclo.
+      technical_notes: Hoy existen paginas scaffolded separadas que deben migrarse conceptualmente al detalle del ciclo. Decision UX validada: Cycle Detail debe funcionar como cockpit unico con progressive disclosure de evidencia tecnica para no competir con la pregunta operativa principal.
       dependencies: [US-002, US-006]
-      notes: Historia critica para alinear implementacion y UX MVP.
+      notes: Historia critica para alinear implementacion y UX MVP; aqui debe resolverse tambien la separacion clara entre flujo Receivable y flujo Payable.
     - id: US-008
       type: user_story
       epic: EPIC-005
@@ -317,9 +317,9 @@ backlog:
       created: 2026-03-09
       completed: null
       technical_note: true
-      technical_notes: El archivo src/lib/settlement-cycles.ts es un inicio, pero no cubre Closed, authorization states ni redemption.
+      technical_notes: El archivo src/lib/settlement-cycles.ts es un inicio, pero no cubre Closed, authorization states ni redemption. El prototipo tambien evidencio que settlement cycle no debe mezclar en un solo objeto issuance authorization, payment instruction, redemption y exception record.
       dependencies: [US-001]
-      notes: Enabler tecnico centrado en dominio y maquina de estados.
+      notes: Enabler tecnico centrado en dominio y maquina de estados; necesario para que la UI deje de apoyarse en simplificaciones de prototipo.
     - id: US-016
       type: user_story
       epic: EPIC-005
